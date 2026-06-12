@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,4 +21,4 @@ jobs:
         with:
           publish_dir: ./docs
           publish_branch: gh-pages
-          # The action will use the GITHUB_TOKEN automatically
+          github_token: ${{ secrets.GITHUB_TOKEN }}
