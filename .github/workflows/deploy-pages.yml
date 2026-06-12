@@ -18,9 +18,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact (pages)
+        uses: actions/upload-artifact@v4
         with:
+          name: pages
           path: ./docs
 
       - name: Deploy to Pages
